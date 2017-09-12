@@ -1,4 +1,5 @@
 from check50 import *
+import os
 
 class Discomfort(Checks):
 
