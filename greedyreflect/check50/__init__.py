@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Discomfort(Checks):
+class Greedyreflect(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'What is my discomfort'"""
+        """You submitted 'Greedy Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("discomfort") for filename in files):
+        if not any(filename.startswith("greedyreflect") for filename in files):
             raise Error("File not found")
