@@ -114,6 +114,16 @@ class Scratchtwo(Checks):
         keywords = ["playSound:", "doPlaySoundAndWait", "playDrum", "noteOn:duration:elapsed:from:"]
         if not project_contains_keywords(project, keywords):
             raise Error("No sounds found, 1 required.")
+            
+   @check("valid")
+    def uses_block(self):
+        """project uses at least one custom block (abstraction)"""
+        project = json.loads(File("scratchtwo.json").read())
+
+        # Search scripts for a custom block.
+        keywords = ["call"]
+        if not project_contains_keywords(project, keywords):
+            raise Error("No custom blocks (abstractions) found, 1 required.")         
 
 def project_contains_keywords(project, keywords):
     """Returns True if project contains at least one of the keywords."""
