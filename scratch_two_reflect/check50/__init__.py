@@ -4,7 +4,7 @@ class Techexplore(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Scratch Reflection'"""
+        """You submitted 'Second Scratch Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("scratch) for filename in files):
+        if not any(filename.startswith("scratch_two_reflect") for filename in files):
             raise Error("File not found")
