@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Penniesreflect(Checks):
+class Initialsreflect(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Pennies Reflection'"""
+        """You submitted 'Initials Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("penniesreflect") for filename in files):
+        if not any(filename.startswith("initialsreflect") for filename in files):
             raise Error("File not found")
