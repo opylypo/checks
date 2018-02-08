@@ -1,10 +1,10 @@
 from check50 import *
 
-class Techexplore(Checks):
+class Webpagereflect(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Scratch Reflection'"""
+        """You submitted 'Web Page Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("scratchreflect") for filename in files):
+        if not any(filename.startswith("webpagereflect") for filename in files):
             raise Error("File not found")
