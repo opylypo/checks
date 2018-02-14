@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Search(Checks):
+class Temperature(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Search Engine'"""
+        """You submitted 'Temperature'"""
         files = os.listdir()
-#         if not any(filename.startswith("friendsreflect") for filename in files):
+#         if not any(filename.startswith("temp") for filename in files):
 #             raise Error("File not found")
