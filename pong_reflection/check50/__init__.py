@@ -1,6 +1,6 @@
 from check50 import *
 
-class Pset4(Checks):
+class Pongreflection(Checks):
 
     @check()
     def submitted(self):
