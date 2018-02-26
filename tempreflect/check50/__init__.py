@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Caesarreflect(Checks):
+class Tempreflect(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Caesar Reflection'"""
+        """You submitted 'Temperature Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("caesarreflect") for filename in files):
+        if not any(filename.startswith("tempreflect") for filename in files):
             raise Error("File not found")
