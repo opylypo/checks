@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Temperature(Checks):
+class Pairprogram(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Temperature'"""
+        """You submitted 'Pair Programming Problem'"""
         files = os.listdir()
-#         if not any(filename.startswith("temp") for filename in files):
+#         if not any(filename.startswith("skittles") for filename in files):
 #             raise Error("File not found")
