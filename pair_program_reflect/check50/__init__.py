@@ -1,10 +1,10 @@
 from check50 import *
 
-class Pongreflection(Checks):
+class Pairreflection(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'PONG Reflection'"""
+        """You submitted 'Pair Programming Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("pong_reflection") for filename in files):
+        if not any(filename.startswith("pair_program_reflect") for filename in files):
             raise Error("File not found")
