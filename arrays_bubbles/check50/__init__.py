@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Temperature(Checks):
+class Arrays(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Temperature'"""
+        """You submitted 'Arrays of Bubbles'"""
         files = os.listdir()
-#         if not any(filename.startswith("temp") for filename in files):
+#         if not any(filename.startswith("sketch") for filename in files):
 #             raise Error("File not found")
