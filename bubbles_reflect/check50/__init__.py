@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Caesarreflect(Checks):
+class Bubblesreflect(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Caesar Reflection'"""
+        """You submitted 'Bubbles Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("caesarreflect") for filename in files):
+        if not any(filename.startswith("bubbles_reflect") for filename in files):
             raise Error("File not found")
