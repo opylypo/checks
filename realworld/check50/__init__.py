@@ -5,7 +5,7 @@ class Extracreditessay(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Extra Credit Essay'"""
+        """You submitted 'Real World Essay'"""
         files = os.listdir()
-        if not any(filename.startswith("extra_credit_essay") for filename in files):
+        if not any(filename.startswith("realworld") for filename in files):
             raise Error("File not found")
