@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Marioreflect(Checks):
+class APIreflect(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Mario Reflection'"""
+        """You submitted your 'Movie API Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("marioreflect") for filename in files):
+        if not any(filename.startswith("API_reflect") for filename in files):
             raise Error("File not found")
