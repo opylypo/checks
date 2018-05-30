@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class Bubblesreflect(Checks):
+class YouTube(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Bubbles Reflection'"""
+        """You submitted 'YouTube Link'"""
         files = os.listdir()
-        if not any(filename.startswith("bubbles_reflect") for filename in files):
+        if not any(filename.startswith("you_tube_link") for filename in files):
             raise Error("File not found")
