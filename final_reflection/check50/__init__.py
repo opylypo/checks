@@ -1,11 +1,11 @@
 from check50 import *
 import os
 
-class P5ProjectReflect(Checks):
+class FinalReflection(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'P5 Project Reflection'"""
+        """You submitted 'Final Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("p5_project_reflect") for filename in files):
+        if not any(filename.startswith("final_reflection") for filename in files):
             raise Error("File not found")
