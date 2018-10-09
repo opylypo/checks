@@ -16,7 +16,7 @@ class Sigma(Checks):
     @check("compiles")
     def test_handles_1_argument(self):
         """sigma handles 10"""
-        self.spawn("./sigma 10").stdout(number("10"), "10\n").exit(0)
+        self.spawn("./sigma 10").stdout("10\n").exit(0)
 
     @check("compiles")
     def test_handles_2_arguments(self):
