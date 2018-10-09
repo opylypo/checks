@@ -1,62 +1,37 @@
 from check50 import *
 
 
-class Calc(Checks):
+class Sigma(Checks):
 
     @check()
     def exists(self):
-        """calc.c exists"""
-        self.require("calc.c")
+        """sigma.c exists"""
+        self.require("sigma.c")
 
     @check("exists")
     def compiles(self):
-        """calc.c compiles"""
-        self.spawn("clang -std=c11 -o calc calc.c -lcs50 -lm").exit(0)
+        """sigma.c compiles"""
+        self.spawn("clang -std=c11 -o calc sigma.c -lcs50 -lm").exit(0)
+        
+    @check("compiles")
+    def test_handles_1 argument(self):
+        """sigma handles 3 + 4"""
+        self.spawn("./sigma 10").stdout(number("10"), "10\n").exit(0)
 
     @check("compiles")
-    def test_handles_addition(self):
-        """calculator handles addition"""
-        self.spawn("./calc 3 + 4").stdout(number("7.000000"), "7.000000\n").exit(0)
+    def test_handles_2 arguments(self):
+        """sigma handles 3 + 4"""
+        self.spawn("./sigma 3 4").stdout(number("7"), "7\n").exit(0)
 
     @check("compiles")
-    def test_handles_subtraction(self):
-        """calculator handles subtraction"""
-        self.spawn("./calc 10.5 - 6.2").stdout(number("4.300000"), "4.300000\n").exit(0)
+    def test_handles_4 arguments(self):
+        """sigma handles 1 + 2 + 3 + 4"""
+        self.spawn("./sigma").stdout(number("10"), "10\n").exit(0)
 
     @check("compiles")
-    def test_handles_division(self):
-        """calculator handles division"""
-        self.spawn("./calc 41.48 / -8.44").stdout(number(-4.914692), "-4.914692\n").exit(0)
-
-    @check("compiles")
-    def test_handles_multiplication_with_x(self):
-        """calculator handles multiplication with "x" """
-        self.spawn("./calc 11.1 x 9").stdout(number(99.900002),"99.900002\n").exit(0)
-
-    @check("compiles")
-    def test_handles_modulo(self):
-        """calculator handles modulo of integers"""
-        self.spawn("./calc 8 % 5").stdout(number("3.000000"), "3.000000\n").exit(0)
-
-    @check("compiles")
-    def test_handles_modulo2(self):
-        """calculator handles modulo of real numbers"""
-        self.spawn("./calc 8.1 % 4.9").stdout(number("3.200000"), "3.200000\n").exit(0)
-
-    @check("compiles")
-    def test_handles_bad_operation(self):
-        """handles invalid operation"""
-        self.spawn("./calc 11 J 8").exit(1)
-
-    @check("compiles")
-    def test_argc_1(self):
-        """handles lack of command line arguments"""
-        self.spawn("./calc").exit(1)
-
-    @check("compiles")
-    def test_argc_5(self):
-        """handles too many command line arguments"""
-        self.spawn("./calc 11.1 + 23 9").exit(1)
+    def test_handles_0 numbers(self):
+        """calculator handles no arguments"""
+        self.spawn("./sigma").stdout(number(0), "0\n").exit(0)
 
 
 def number(num):
