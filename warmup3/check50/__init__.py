@@ -11,7 +11,7 @@ class Sigma(Checks):
     @check("exists")
     def compiles(self):
         """sigma.c compiles"""
-        self.spawn("clang -std=c11 -o calc sigma.c -lcs50 -lm").exit(0)
+        self.spawn("clang -std=c11 -o sigma sigma.c -lcs50 -lm").exit(0)
         
     @check("compiles")
     def test_handles_1_argument(self):
