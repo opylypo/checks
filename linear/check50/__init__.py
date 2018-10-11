@@ -16,12 +16,12 @@ class Linear(Checks):
     @check("compiles")
     def test_handles_addition(self):
         """linear search finds Malan"""
-        self.spawn("./linear").stdin("Malan").stdout("Caling Malan\n").exit(0)
+        self.spawn("./linear").stdin("Malan").stdout("Calling Malan\n").exit(0)
 
     @check("compiles")
     def test_handles_subtraction(self):
         """linear search finds Smith"""
-        self.spawn("./linear").stdin("Smith").stdout("Caling Smith\n").exit(0)
+        self.spawn("./linear").stdin("Smith").stdout("Calling Smith\n").exit(0)
 
     @check("compiles")
     def test_handles_division(self):
