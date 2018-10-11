@@ -1,21 +1,21 @@
 from check50 import *
 
 
-class Calc(Checks):
+class Linear(Checks):
 
     @check()
     def exists(self):
-        """calc.c exists"""
-        self.require("calc.c")
+        """linear.c exists"""
+        self.require("linear.c")
 
     @check("exists")
     def compiles(self):
-        """calc.c compiles"""
-        self.spawn("clang -std=c11 -o calc calc.c -lcs50 -lm").exit(0)
+        """linear.c compiles"""
+        self.spawn("clang -std=c11 -o linear linear.c -lcs50 -lm").exit(0)
 
     @check("compiles")
     def test_handles_addition(self):
-        """calculator handles addition"""
+        """linear search finds Malan"""
         self.spawn("./calc 3 + 4").stdout(number("7.000000"), "7.000000\n").exit(0)
 
     @check("compiles")
