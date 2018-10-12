@@ -15,5 +15,5 @@ class Bubble(Checks):
 
     @check("compiles")
     def sorts(self):
-        """sorts {5,4,3,2,1}"""
+        """sorts {64, 34, 25, 12, 22, 11, 90}"""
         self.spawn("./bubble").stdout("11 12 22 25 34 64 90\n").exit(0)
