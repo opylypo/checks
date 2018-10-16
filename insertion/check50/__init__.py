@@ -16,4 +16,4 @@ class Insertion(Checks):
     @check("compiles")
     def sorts(self):
         """sorts {50, 19, 64, 7, 108, 42, 82}"""
-        self.spawn("./insertion").stdout("7, 19, 42, 50, 64, 82, 108\n").exit(0)
+        self.spawn("./insertion").stdout("7 19 42 50 64 82 108\n").exit(0)
