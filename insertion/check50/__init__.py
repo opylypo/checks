@@ -1,19 +1,19 @@
 from check50 import *
 
 
-class Bubble(Checks):
+class Insertion(Checks):
 
     @check()
     def exists(self):
-        """bubble.c exists."""
-        self.require("bubble.c")
+        """insertion.c exists."""
+        self.require("insertion.c")
 
     @check("exists")
     def compiles(self):
-        """bubble.c compiles."""
-        self.spawn("clang -std=c11 -o bubble bubble.c -lcs50 -lm").exit(0)
+        """insertion.c compiles."""
+        self.spawn("clang -std=c11 -o insertion insertion.c -lcs50 -lm").exit(0)
 
     @check("compiles")
     def sorts(self):
-        """sorts {64, 34, 25, 12, 22, 11, 90}"""
-        self.spawn("./bubble").stdout("11 12 22 25 34 64 90 \n").exit(0)
+        """sorts {50, 19, 64, 7, 108, 42, 82}"""
+        self.spawn("./insertion").stdout("7, 19, 42, 50, 64, 82, 108\n").exit(0)
