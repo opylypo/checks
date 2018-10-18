@@ -16,15 +16,15 @@ class Bin_search(Checks):
     @check("compiles")
     def test_handles_addition(self):
         """linear search finds 2"""
-        self.spawn("./linear").stdin("2").stdout("Found\n").exit(0)
+        self.spawn("./linear").stdin(2).stdout("Found\n").exit(0)
 
     @check("compiles")
     def test_handles_subtraction(self):
         """linear search finds 14"""
-        self.spawn("./linear").stdin("14").stdout("Found\n").exit(0)
+        self.spawn("./linear").stdin(14).stdout("Found\n").exit(0)
 
     @check("compiles")
     def test_handles_division(self):
         """linear search does not fine 9"""
-        self.spawn("./linear").stdin("9").stdout("Not found!\n").exit(0)
+        self.spawn("./linear").stdin(9).stdout("Not found!\n").exit(0)
 
