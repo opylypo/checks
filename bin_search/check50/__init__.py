@@ -1,30 +1,30 @@
 from check50 import *
 
 
-class Linear(Checks):
+class Bin_search(Checks):
 
     @check()
     def exists(self):
-        """linear.c exists"""
-        self.require("linear.c")
+        """bin_search.c exists"""
+        self.require("bin_search.c")
 
     @check("exists")
     def compiles(self):
-        """linear.c compiles"""
-        self.spawn("clang -std=c11 -o linear linear.c -lcs50 -lm").exit(0)
+        """bin_search.c compiles"""
+        self.spawn("clang -std=c11 -o bin_search bin_search.c -lcs50 -lm").exit(0)
 
     @check("compiles")
     def test_handles_addition(self):
-        """linear search finds Malan"""
-        self.spawn("./linear").stdin("Malan").stdout("Calling Malan\n").exit(0)
+        """linear search finds 2"""
+        self.spawn("./linear").stdin("2").stdout("Found\n").exit(0)
 
     @check("compiles")
     def test_handles_subtraction(self):
-        """linear search finds Smith"""
-        self.spawn("./linear").stdin("Smith").stdout("Calling Smith\n").exit(0)
+        """linear search finds 14"""
+        self.spawn("./linear").stdin("14").stdout("Found\n").exit(0)
 
     @check("compiles")
     def test_handles_division(self):
-        """linear search does not fine Tanzosh"""
-        self.spawn("./linear").stdin("Tanzosh").stdout("Quitting\n").exit(0)
+        """linear search does not fine 9"""
+        self.spawn("./linear").stdin("9").stdout("Not found!\n").exit(0)
 
