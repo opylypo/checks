@@ -1,10 +1,10 @@
 from check50 import *
 
-class Pset4(Checks):
+class Pset6(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'PSET4 Reflection'"""
+        """You submitted 'PSET6 Reflection'"""
         files = os.listdir()
-        if not any(filename.startswith("pset4_reflection") for filename in files):
+        if not any(filename.startswith("pset6_reflection") for filename in files):
             raise Error("File not found")
