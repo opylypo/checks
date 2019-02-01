@@ -38,7 +38,7 @@ class Flask1(Checks):
     def has_form(self):
         """has form"""
 
-        if len(self.get_content("/", "index")) < 1:
+        if len(self.get_content("/")) < 1:
             raise Error("expected form element")
 
 
@@ -46,7 +46,7 @@ class Flask1(Checks):
     def has_text_fields(self):
         """has one or more text fields"""
 
-        form = self.get_content("/", "index")[0]
+        form = self.get_content("/")[0]
         if len(form.find_all("textarea")):
             return
 
