@@ -42,24 +42,24 @@ class Flask1(Checks):
             raise Error("expected form element")
 
 
-    @check("has_form")
-    def has_text_fields(self):
-        """has one or more text fields"""
+#     @check("has_form")
+#     def has_text_fields(self):
+#         """has one or more text fields"""
 
-        form = self.get_content("/")[0]
-        if len(form.find_all("textarea")):
-            return
+#         form = self.get_content("/")[0]
+#         if len(form.find_all("textarea")):
+#             return
 
-        inputs = form.find_all("input")
-        types = [
-            "date", "datetime-local", "email", "month", "number", "password",
-            "search", "tel", "text", "time", "url", "week"
-        ]
+#         inputs = form.find_all("input")
+#         types = [
+#             "date", "datetime-local", "email", "month", "number", "password",
+#             "search", "tel", "text", "time", "url", "week"
+#         ]
 
-        if any((e.attrs["type"] in types for e in inputs)):
-            return
+#         if any((e.attrs["type"] in types for e in inputs)):
+#             return
 
-        raise Error("expected at least one text input")
+#         raise Error("expected at least one text input")
 
 
 #     @check("has_form")
