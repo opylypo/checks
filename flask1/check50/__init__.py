@@ -6,7 +6,7 @@ def helper(f):
     @wraps(f)
     def wrapper(self, *args, **kwargs):
         if not hasattr(self, "app"):
-            self.app = self.flask(Survey.APP)
+            self.app = self.flask(Flask1.APP)
         return f(self, *args, **kwargs)
     return wrapper
 
