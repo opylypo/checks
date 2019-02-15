@@ -1,6 +1,6 @@
 from check50 import *
 
-class Pset4(Checks):
+class Pset7(Checks):
 
     @check()
     def submitted(self):
