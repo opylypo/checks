@@ -1,11 +1,9 @@
 from check50 import *
 import os
 
-class Pairprogram(Checks):
+class Dvdreflect(Checks):
 
     @check()
     def submitted(self):
-        """You submitted 'Pair Programming Problem'"""
+        """You submitted 'DVD Screen Saver Reflection'"""
         files = os.listdir()
-#         if not any(filename.startswith("skittles") for filename in files):
-#             raise Error("File not found")
