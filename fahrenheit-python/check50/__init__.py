@@ -40,12 +40,6 @@ class Fahrenheit(Checks):
         """rejects a non-numeric input of "foo" """
         self.spawn("python3 fahrenheit.py").stdin("foo").reject()
         
-        
-    @check("exists")
-    def test_reject_foo(self):
-        """rejects a non-numeric input of "foo" """
-        self.spawn("python3 fahrenheit.py").stdin("foo").reject()
-        
     @check("exists")
     def test_reject_empty_string(self):
         """rejects a non-numeric input of "" """
