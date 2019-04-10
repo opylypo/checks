@@ -15,10 +15,10 @@ class Fahrenheit(Checks):
         """37 degrees Celsius yields 98.6 degrees Fahrenheit"""
         self.spawn("python3 fahrenheit.py").stdin("37").stdout(number(98.6), "98.6\n").exit(0)
 
-    @check("exists")
-    def test0(self):
-       """0 degrees Celsius yields 32.0 degrees Fahrenheit"""
-        self.spawn("python3 fahrenheit.py").stdin("0").stdout(number(32.0), "32.0\n").exit(0)
+#     @check("exists")
+#     def test0(self):
+#        """0 degrees Celsius yields 32.0 degrees Fahrenheit"""
+#         self.spawn("python3 fahrenheit.py").stdin("0").stdout(number(32.0), "32.0\n").exit(0)
 
 #     @check("exists")
 #     def test100(self):
@@ -35,15 +35,15 @@ class Fahrenheit(Checks):
 #         """-123.45678 degrees Celsius yields -190.2 degrees Fahrenheit"""
 #         self.spawn("python3 fahrenheit.py").stdin("-123.45678").stdout(number(-190.2), "-190.2\n").exit(0)
 
-#     @check("exists")
-#     def test_reject_foo(self):
-#         """rejects a non-numeric input of "foo" """
-#         self.spawn("python3 fahrenheit.py").stdin("foo").reject()
+    @check("exists")
+    def test_reject_foo(self):
+        """rejects a non-numeric input of "foo" """
+        self.spawn("python3 fahrenheit.py").stdin("foo").reject()
         
-#     @check("exists")
-#     def test_reject_empty_string(self):
-#         """rejects a non-numeric input of "" """
-#         self.spawn("python3 fahrenheit.py").stdin("").reject()
+    @check("exists")
+    def test_reject_empty_string(self):
+        """rejects a non-numeric input of "" """
+        self.spawn("python3 fahrenheit.py").stdin("").reject()
 
 
 
