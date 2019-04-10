@@ -7,5 +7,5 @@ class Bubbles(Checks):
     def submitted(self):
         """You submitted 'Bubbles Challenge'"""
         files = os.listdir()
-#         if not any(filename.startswith("sketch") for filename in files):
-#             raise Error("File not found")
+        if not any(filename.startswith("sketch") for filename in files):
+            raise Error("File not found")
