@@ -17,7 +17,7 @@ class Fahrenheit(Checks):
 
     @check("exists")
     def test0(self):
-       """0 degrees Celsius yields 32.0 degrees Fahrenheit"""
+        """0 degrees Celsius yields 32.0 degrees Fahrenheit"""
         self.spawn("python3 fahrenheit.py").stdin("0").stdout(number(32.0), "32.0\n").exit(0)
 
     @check("exists")
