@@ -1,3 +1,5 @@
+import re
+
 from check50 import *
 
 
