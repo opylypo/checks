@@ -3,7 +3,7 @@ import re
 from check50 import *
 
 
-cclass Fahrenheit(Checks):
+class Fahrenheit(Checks):
 
     @check()
     def exists(self):
