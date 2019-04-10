@@ -25,15 +25,15 @@ class Fahrenheit(Checks):
 #         """100.00 degrees Celsius yields 212.0 degrees Fahrenheit"""
 #         self.spawn("python3 fahrenheit.py").stdin("100.00").stdout(number(212.0), "212.0\n").exit(0)
            
-#     @check("exists")
-#     def test18point5(self):
-#         """18.5 degrees Celsius yields 65.3 degrees Fahrenheit"""
-#         self.spawn("python3 fahrenheit.py").stdin("18.5").stdout(number(65.3), "65.3\n").exit(0)
+    @check("exists")
+    def test18point5(self):
+        """18.5 degrees Celsius yields 65.3 degrees Fahrenheit"""
+        self.spawn("python3 fahrenheit.py").stdin("18.5").stdout(number(65.3), "65.3\n").exit(0)
         
-#     @check("exists")
-#     def testneg123point45678(self):
-#         """-123.45678 degrees Celsius yields -190.2 degrees Fahrenheit"""
-#         self.spawn("python3 fahrenheit.py").stdin("-123.45678").stdout(number(-190.2), "-190.2\n").exit(0)
+    @check("exists")
+    def testneg123point45678(self):
+        """-123.45678 degrees Celsius yields -190.2 degrees Fahrenheit"""
+        self.spawn("python3 fahrenheit.py").stdin("-123.45678").stdout(number(-190.2), "-190.2\n").exit(0)
 
     @check("exists")
     def test_reject_foo(self):
