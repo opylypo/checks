@@ -10,10 +10,10 @@ class Fahrenheit(Checks):
         """fahrenheit.py exists"""
         self.require("fahrenheit.py")
 
-#     @check("exists")
-#     def test37(self):
-#         """37 degrees Celsius yields 98.6 degrees Fahrenheit"""
-#         self.spawn("python3 fahrenheit.py").stdin("37").stdout(number(98.6), "98.6\n").exit(0)
+    @check("exists")
+    def test37(self):
+        """37 degrees Celsius yields 98.6 degrees Fahrenheit"""
+        self.spawn("python3 fahrenheit.py").stdin("37").stdout(number(98.6), "98.6\n").exit(0)
 
 #     @check("exists")
 #     def test0(self):
