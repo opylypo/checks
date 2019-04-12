@@ -43,7 +43,7 @@ class Water(Checks):
     @check("exists")
     def test_reject_123abc(self):
         """rejects "123abc" minutes"""
-        self.spawn("python water").stdin("123abc").reject()
+        self.spawn("python water.py").stdin("123abc").reject()
 
 
         
