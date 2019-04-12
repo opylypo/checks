@@ -18,10 +18,10 @@ class Credit(Checks):
         """identifies 371449635398431 as AMEX"""
         self.spawn("python3 credit.py").stdin("371449635398431").stdout("^AMEX\n", "AMEX\n").exit(0)
 
-    @check("exists")
-    def test3(self):
-        """identifies 5555555555554444 as MASTERCARD"""
-        self.spawn("python3 credit.py").stdin("5555555555554444").stdout("^MASTERCARD\n", "MASTERCARD\n").exit(0)
+#     @check("exists")
+#     def test3(self):
+#         """identifies 5555555555554444 as MASTERCARD"""
+#         self.spawn("python3 credit.py").stdin("5555555555554444").stdout("^MASTERCARD\n", "MASTERCARD\n").exit(0)
 
     @check("exists")
     def test4(self):
