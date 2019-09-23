@@ -1,0 +1,7 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !require scratchreflect.txt
+
+submit50:
+  files: *check50_files
