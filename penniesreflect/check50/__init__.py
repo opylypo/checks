@@ -1,11 +1,9 @@
-from check50 import *
-import os
+import check50
+import check50.c
+import re
 
-class Penniesreflect(Checks):
 
-    @check()
-    def submitted(self):
-        """You submitted 'Pennies Reflection'"""
-        files = os.listdir()
-        if not any(filename.startswith("penniesreflect") for filename in files):
-            raise Error("File not found")
+@check50.check()
+def exists(self):
+    """penniesreflect.txt exists."""
+    check50.exists("penniesreflect.txt")
