@@ -1,0 +1,7 @@
+check50: 
+  files: &check50_files
+    - !exclude "*"
+    - !require pset2_reflection.txt
+
+submit50:
+  files: *check50_files
