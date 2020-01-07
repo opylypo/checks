@@ -28,7 +28,7 @@ def mixed_case():
     check50.run("./pwcheck").stdin("AbCcDd12", prompt=False).stdout("Does Not Pass\n").exit(0)
 
 @check50.check(compiles)
-def all_uppercase():
+def passes_check():
     """Outputs Passes"""
     check50.run("./pwcheck").stdin("AbCcDd1!", prompt=False).stdout("Passes\n").exit(0)
 
