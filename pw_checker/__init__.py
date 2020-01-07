@@ -4,8 +4,8 @@ import re
 
 @check50.check()
 def exists():
-    """initials.c exists."""
-    check50.exists("initials.c")
+    """pwcheck.c exists."""
+    check50.exists("pwcheck.c")
 
 @check50.check(exists)
 def compiles():
