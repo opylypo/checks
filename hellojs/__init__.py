@@ -7,7 +7,7 @@ def exists():
     """hello.js exists."""
     check50.exists("hello.js")
 
-@check50.check(compiles)
+@check50.check(exists)
 def prints_hello():
     """prints "hello, world\\n" """
     from re import match
