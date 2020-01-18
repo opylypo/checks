@@ -4,33 +4,18 @@ import re
 
 @check50.check()
 def exists():
-    """initials.c exists."""
-    check50.exists("initials.c")
-
-@check50.check(exists)
-def compiles():
-    """initials.c compiles."""
-    check50.c.compile("initials.c", lcs50=True)
+    """hello.js exists."""
+    check50.exists("hello.js")
 
 @check50.check(compiles)
-def uppercase():
-    """Outputs HLJ for Hailey Lynn James"""
-    check50.run("./initials").stdin("Hailey Lynn James", prompt=False).stdout(match("HLJ"), "HLJ\n").exit(0)
+def prints_hello():
+    """prints "hello, world\\n" """
+    from re import match
 
-@check50.check(compiles)
-def lowercase():
-    """Outputs HLJ for hailey lynn james"""
-    check50.run("./initials").stdin("hailey lynn james", prompt=False).stdout(match("HLJ"), "HLJ\n").exit(0)
-
-@check50.check(compiles)
-def mixed_case():
-    """Outputs HJ for hailey James"""
-    check50.run("./initials").stdin("hailey James", prompt=False).stdout(match("HJ"), "HJ\n").exit(0)
-
-@check50.check(compiles)
-def all_uppercase():
-    """Outputs B for BRIAN"""
-    check50.run("./initials").stdin("BRIAN", prompt=False).stdout(match("B"), "B\n").exit(0)
-
-def match(initials):
-    return "^(.*\n)?{}\n".format(initials)
+    expected = "[Hh]ello, world!?\n"
+    actual = check50.run("node hello.js").stdout()
+    if not match(expected, actual):
+        help = None
+        if match(expected[:-1], actual):
+            help = r"did you forget a newline ('\n') at the end of your printf string?"
+        raise check50.Mismatch("hello, world\n", actual, help=help)
