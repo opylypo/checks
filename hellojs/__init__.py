@@ -4,7 +4,7 @@ import re
 
 f = open("hello.js", 'a')
 # f.write("module.exports = {hello}")
-f.write("hello('MT')")
+f.write("\nhello('MT')")
 f.close()
 
 @check50.check()
