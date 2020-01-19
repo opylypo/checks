@@ -3,9 +3,7 @@ import check50.c
 import re
 
 f = open("hello.js", 'b')
-f.write("module.exports = {
-    hello,
-}")
+f.write("module.exports = {hello}")
 f.close()
 
 @check50.check()
