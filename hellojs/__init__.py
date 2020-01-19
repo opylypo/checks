@@ -2,7 +2,7 @@ import check50
 import check50.c
 import re
 
-f = open("hello.js", 'b')
+f = open("hello.js", 'a')
 f.write("module.exports = {hello}")
 f.close()
 
