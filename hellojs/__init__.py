@@ -17,7 +17,7 @@ def prints_hello():
     from re import match
 
     expected = "[Hh]ello,MT\n"
-    actual = check50.run("node -e 'require(\"./hello\").hello(\"MT\")'").stdout()
+    actual = check50.run('node -e \'require("./hello").hello("MT")\'').stdout()
     if not match(expected, actual):
         help = None
         if match(expected[:-1], actual):
