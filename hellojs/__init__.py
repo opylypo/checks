@@ -20,7 +20,7 @@ def prints_hello():
     input_data = "MT"
         
     expected = "[Hh]ello,MT\n"
-    actual = check50.run('node -e "require(pgm_name).hello(input_data)"').stdout()
+    actual = check50.run('node -e "require(" + pgm_name + ").hello(" + input_data+ ")"').stdout()
     if not match(expected, actual):
         help = None
         if match(expected[:-1], actual):
