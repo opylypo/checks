@@ -3,7 +3,7 @@ import bond
 
 @check50.check()
 def foo_exists():
-  """ Function foo exists """
+    """ Function foo exists """
 
     # Create a JavaScript interface
     i = bond.make_bond("JavaScript")
