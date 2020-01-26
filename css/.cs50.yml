@@ -1,0 +1,8 @@
+  
+check50: 
+  files: &check50_files
+    - !require mypage.html
+
+submit50: 
+  files: *check50_files
+  style: false
