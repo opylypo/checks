@@ -4,8 +4,8 @@ check50:
     - !exclude '__pycache__'
     - !require application.py
     - !require templates/layout.html
-    - !require templates/form.html
-    - !require templates/error.html
+    - !require templates/index.html
+    - !require templates/cross.html
     - !require static/styles.css
 
 submit50:
