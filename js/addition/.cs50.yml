@@ -3,4 +3,4 @@ check50:
     - !exclude "*"
     - !require "addition.js"
   dependencies:
-    - "git+https://github.com/cs50/check50/sample-extension/check50_js.git#egg=check50_js"
+    - "git+https://github.com/cs50/check50/blob/sample-extension/check50_js.py#egg=check50_js"
