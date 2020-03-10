@@ -5,4 +5,4 @@ import re
 
 @check50.check()
 def submitted():
-    """Tempreflect.txt submitted"""
+    """tempreflect.txt submitted"""
