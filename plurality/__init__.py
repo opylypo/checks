@@ -18,11 +18,11 @@ def prepare():
     plurality_test.close()
     
 
-@check50.check(compiles)
-@check50.hidden("vote function did not return True")
-def vote_finds_name():
-    """vote returns true when given name of candidate"""
-    check50.run("python3 testing.py 0").stdout("True").exit(0)
+# @check50.check(compiles)
+# @check50.hidden("vote function did not return True")
+# def vote_finds_name():
+#     """vote returns true when given name of candidate"""
+#     check50.run("python3 testing.py 0").stdout("True").exit(0)
   
 
 # @check50.check(compiles)
@@ -32,8 +32,8 @@ def vote_finds_name():
 #     check50.run("python3 testing.py 1").stdout("False").exit(0)
   
 
-# @check50.check(exists)
-# def print_winner0():
-#     """print_winner identifies Alice as winner of election"""
-#     check50.run("python3 plurality.py Alice Bob").stdin("2").stdin("Alice").stdin("Alice").stdout("Alice\n").exit(0)
+@check50.check(exists)
+def print_winner0():
+    """print_winner identifies Alice as winner of election"""
+    check50.run("python3 plurality.py Alice Bob").stdin("2").stdin("Alice").stdin("Alice").stdout("Alice\n").exit(0)
 
