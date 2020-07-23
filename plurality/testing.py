@@ -8,11 +8,11 @@ if len(argv) != 2:
 test = int(argv[1])
 
 candidate_count = 3
-candidates = {}
+# candidates = {}
 
-candidates["Alice"] = 0
-candidates["Bob"] = 0
-candidates["Charlie"] = 0
+# candidates["Alice"] = 0
+# candidates["Bob"] = 0
+# candidates["Charlie"] = 0
 
 def case0():
     print(vote("Alice"))
