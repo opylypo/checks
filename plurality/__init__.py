@@ -7,6 +7,7 @@ def exists():
     
 @check50.check(exists)
 def prepare():
+    """test file created"""
     plurality = open("plurality.py")
     plurality_test = open("plurality_test.py", "w")
 
