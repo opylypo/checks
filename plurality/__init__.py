@@ -4,6 +4,17 @@ import check50
 def exists():
     """plurality.py exists"""
     check50.exists("plurality.py")
+    
+@check50.check(exists)
+def prepare():
+    plurality = open("plurality.py")
+    plurality_test = open("plurality_test.py", "w")
+
+    plurality_test.write(plurality.read())
+    plurality_test.write("\n\ncandidates['Alice'] = 0\ncandidates['Bob'] = 0\ncandidates['Charlie'] = 0")
+
+    plurality.close()
+    plurality_test.close()
 
 @check50.check(exists)
 def print_winner0():
