@@ -1,6 +1,6 @@
 import sys
 
-from plurality import vote
+from plurality import vote, Candidate, Preference
 
 
 def main():
