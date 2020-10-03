@@ -4,7 +4,8 @@ from plurality import vote, Candidate, Preference
 
 
 def main():
-    candidates_ = {'Alice': 0, 'Bob': 0, 'Charles': 0}
+    # candidates_ = {'Alice': 0, 'Bob': 0, 'Charles': 0}
+    candidates_ = [Candidate('Alice', 0, False), Candidate('Bob', 0, False), Candidate('Charles', 0, False)
 
     global candidates
     candidates = dict.copy(candidates_)
