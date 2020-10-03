@@ -8,7 +8,7 @@ def main():
     candidates_ = [Candidate('Alice', 0, False), Candidate('Bob', 0, False), Candidate('Charles', 0, False)
 
     global candidates
-    candidates = dict.copy(candidates_)
+    candidates = candidates_.copy()
 
     candidate = sys.argv[1]
 
