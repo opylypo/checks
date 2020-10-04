@@ -72,19 +72,19 @@ def print_winner1():
 @check50.hidden("print_winner did not print winner and then return true")
 def print_winner2():
     """print_winner returns true when someone has a majority"""
-    check50.run("python3 runoff_test.py 2 9").stdout("Bob\ntrue").exit(0)
+    check50.run("python3 runoff_test.py 2 9").stdout("Bob\nTrue").exit(0)
 
 @check50.check(exists)
 @check50.hidden("print_winner did not return false")
 def print_winner3():
     """print_winner returns false when nobody has a majority"""
-    check50.run("python3 runoff_test.py 2 10").stdout("false").exit(0)
+    check50.run("python3 runoff_test.py 2 10").stdout("False").exit(0)
 
 @check50.check(exists)
 @check50.hidden("print_winner did not return false")
 def print_winner4():
     """print_winner returns false when leader has exactly 50% of vote"""
-    check50.run("python3 runoff_test.py 2 11").stdout("false").exit(0)
+    check50.run("python3 runoff_test.py 2 11").stdout("False").exit(0)
 
 @check50.check(exists)
 @check50.hidden("find_min did not identify correct minimum")
@@ -108,43 +108,43 @@ def find_min3():
 @check50.hidden("is_tie did not return true")
 def is_tie1():
     """is_tie returns true when election is tied"""
-    check50.run("python3 runoff_test.py 2 15").stdout("true").exit(0)
+    check50.run("python3 runoff_test.py 2 15").stdout("True").exit(0)
 
 @check50.check(exists)
 @check50.hidden("is_tie did not return false")
 def is_tie2():
     """is_tie returns false when election is not tied"""
-    check50.run("python3 runoff_test.py 2 16").stdout("false").exit(0)
+    check50.run("python3 runoff_test.py 2 16").stdout("False").exit(0)
 
 @check50.check(exists)
 @check50.hidden("is_tie did not return false")
 def is_tie3():
     """is_tie returns false when only some of the candidates are tied"""
-    check50.run("python3 runoff_test.py 2 17").stdout("false").exit(0)
+    check50.run("python3 runoff_test.py 2 17").stdout("False").exit(0)
 
 @check50.check(exists)
 @check50.hidden("is_tie did not return true")
 def is_tie4():
     """is_tie detects tie after some candidates have been eliminated"""
-    check50.run("python3 runoff_test.py 2 18").stdout("true").exit(0)
+    check50.run("python3 runoff_test.py 2 18").stdout("True").exit(0)
 
 @check50.check(exists)
 @check50.hidden("eliminate did not eliminate correct candidates")
 def eliminate1():
     """eliminate eliminates candidate in last place"""
-    check50.run("python3 runoff_test.py 2 19").stdout("false false false true ").exit(0)
+    check50.run("python3 runoff_test.py 2 19").stdout("False False False Frue ").exit(0)
 
 @check50.check(exists)
 @check50.hidden("eliminate did not eliminate correct candidates")
 def eliminate2():
     """eliminate eliminates multiple candidates in tie for last"""
-    check50.run("python3 runoff_test.py 2 20").stdout("true false true false ").exit(0)
+    check50.run("python3 runoff_test.py 2 20").stdout("True False True False ").exit(0)
 
 @check50.check(exists)
 @check50.hidden("eliminate did not eliminate correct candidates")
 def eliminate3():
     """eliminate eliminates candidates after some already eliminated"""
-    check50.run("python3 runoff_test.py 2 21").stdout("true false true false ").exit(0)    
+    check50.run("python3 runoff_test.py 2 21").stdout("True False True False ").exit(0)    
     
     
     
