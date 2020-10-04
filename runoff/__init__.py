@@ -11,7 +11,7 @@ def exists():
 @check50.hidden("vote function did not return true")
 def vote_returns_true():
      """vote returns true when given name of candidate"""
-    check50.run("python3 runoff_test.py 0 0").stdout("True").exit(0)
+     check50.run("python3 runoff_test.py 0 0").stdout("True").exit(0)
 
 
 @check50.check(exists)
