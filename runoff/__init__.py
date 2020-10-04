@@ -8,58 +8,144 @@ def exists():
 
 
 @check50.check(exists)
-def vote_check1():
-    """vote returns True and updates preferences correctly when given name of first candidate"""
-    check50.run("python3 runoff_test.py Alice").exit(0)
+@check50.hidden("vote function did not return true")
+def vote_returns_true():
+     """vote returns true when given name of candidate"""
+    check50.run("python3 runoff_test.py 0 0").stdout("True").exit(0)
 
 
 @check50.check(exists)
-def vote_check2():
-    """vote returns True and updates preferences correctly when given name of middle candidate"""
-    check50.run("python3 runoff_test.py Bob").exit(0)
+@check50.hidden("vote function did not return false")
+def vote_returns_false():
+    """vote returns false when given name of invalid candidate"""
+    check50.run("python3 runoff_test.py 0 1").stdout("False").exit(0)
 
 
 @check50.check(exists)
-def vote_check3():
-    """vote returns True and updates preferences correctly when given name of last candidate"""
-    check50.run("python3 runoff_test.py Charles").exit(0)
+@check50.hidden("vote function did not correctly set preferences")
+def vote_sets_preference1():
+    """vote correctly sets first preference for first voter"""
+    check50.run("python3 runoff_test.py 0 2").stdout("True").exit(0)
 
 
 @check50.check(exists)
-def vote_check4():
-    """vote returns False and leaves votes unchanged when given name of invalid candidate"""
-    check50.run("python3 runoff_test.py RickRoll").exit(0)
+def vote_sets_preference2():
+    """vote correctly sets third preference for second voter"""
+    check50.run("python3 runoff_test.py 0 3").stdout("True").exit(0)
 
 
 @check50.check(exists)
-def print_winner_check1():
-    """print_winner identifies Alice as winner of election"""
-    check50.run("python3 runoff.py Alice Bob")\
-        .stdin("2").stdin("Alice").stdin("Alice").stdout("Alice\n").exit(0)
-
-
-@check50.check(exists)
-def print_winner_check2():
-    """print_winner identifies Bob as winners of election"""
-    check50.run("python3 runoff.py Bob Charles")\
-        .stdin("3").stdin("Bob").stdin("Bob").stdin("Charles").stdout("Bob\n").exit(0)
+@check50.hidden("vote function did not correctly set preferences")
+def vote_sets_all_preferences():
+    """vote correctly sets all preferences for voter"""
+    check50.run("python3 runoff_test.py 0 4").stdout("True").exit(0)
+    
 
 @check50.check(exists)
-def print_winner_check3():
-    """print_winner identifies Charles as winners of election"""
-    check50.run("python3 runoff.py Alice Bob Charles")\
-        .stdin("4").stdin("Charles").stdin("Charles").stdin("Alice").stdin("Bob").stdout("Charles\n").exit(0)
-
-
-@check50.check(exists)
-def print_winner_check4():
-    """print_winner prints multiple winners in case of tie"""
-    check50.run("python3 runoff.py Alice Bob Charles").stdin("5")\
-        .stdin("Alice").stdin("Alice").stdin("Bob").stdin("Bob").stdin("Charles").stdout("Alice\nBob\n").exit(0)
-
+@check50.hidden("tabulate function did not produce correct vote totals")
+def tabulate1():
+    """tabulate counts votes when all candidates remain in election"""
+    check50.run("python3 runoff_test.py 1 5").stdout("3 3 1 0 ").exit(0)
+        
 
 @check50.check(exists)
-def print_winner_check5():
-    """print_winner prints all names when all candidates are tied"""
-    check50.run("python3 runoff.py Alice Bob Charles").stdin("3")\
-        .stdin("Alice").stdin("Bob").stdin("Charles").stdout("Alice\nBob\nCharles\n").exit(0)
+@check50.hidden("tabulate function did not produce correct vote totals")
+def tabulate2():
+    """tabulate counts votes when one candidate is eliminated"""
+    check50.run("python3 runoff_test.py 1 6").stdout("3 3 1 0 ").exit(0)
+        
+
+@check50.check(exists)
+@check50.hidden("tabulate function did not produce correct vote totals")
+def tabulate3():
+    """tabulate counts votes when multiple candidates are eliminated"""
+    check50.run("python3 runoff_test.py 1 7").stdin("5").stdout("3 4 0 0 ").exit(0)
+    
+    
+@check50.check(exists)
+@check50.hidden("print_winner did not print winner of election")
+def print_winner1():
+    """print_winner prints name when someone has a majority"""
+    check50.run("python3 runoff_test.py 2 8").stdout("Bob\n").exit(0)
+    
+@check50.check(exists)
+@check50.hidden("print_winner did not print winner and then return true")
+def print_winner2():
+    """print_winner returns true when someone has a majority"""
+    check50.run("python3 runoff_test.py 2 9").stdout("Bob\ntrue").exit(0)
+
+@check50.check(exists)
+@check50.hidden("print_winner did not return false")
+def print_winner3():
+    """print_winner returns false when nobody has a majority"""
+    check50.run("python3 runoff_test.py 2 10").stdout("false").exit(0)
+
+@check50.check(exists)
+@check50.hidden("print_winner did not return false")
+def print_winner4():
+    """print_winner returns false when leader has exactly 50% of vote"""
+    check50.run("python3 runoff_test.py 2 11").stdout("false").exit(0)
+
+@check50.check(exists)
+@check50.hidden("find_min did not identify correct minimum")
+def find_min1():
+    """find_min returns minimum number of votes for candidate"""
+    check50.run("python3 runoff_test.py 2 12").stdout("1").exit(0)
+
+@check50.check(exists)
+@check50.hidden("find_min did not identify correct minimum")
+def find_min2():
+    """find_min returns minimum when all candidates are tied"""
+    check50.run("python3 runoff_test.py 2 13").stdout("7").exit(0)
+
+@check50.check(exists)
+@check50.hidden("find_min did not identify correct minimum")
+def find_min3():
+    """find_min ignores eliminated candidates"""
+    check50.run("python3 runoff_test.py 2 14").stdout("5").exit(0)
+
+@check50.check(exists)
+@check50.hidden("is_tie did not return true")
+def is_tie1():
+    """is_tie returns true when election is tied"""
+    check50.run("python3 runoff_test.py 2 15").stdout("true").exit(0)
+
+@check50.check(exists)
+@check50.hidden("is_tie did not return false")
+def is_tie2():
+    """is_tie returns false when election is not tied"""
+    check50.run("python3 runoff_test.py 2 16").stdout("false").exit(0)
+
+@check50.check(exists)
+@check50.hidden("is_tie did not return false")
+def is_tie3():
+    """is_tie returns false when only some of the candidates are tied"""
+    check50.run("python3 runoff_test.py 2 17").stdout("false").exit(0)
+
+@check50.check(exists)
+@check50.hidden("is_tie did not return true")
+def is_tie4():
+    """is_tie detects tie after some candidates have been eliminated"""
+    check50.run("python3 runoff_test.py 2 18").stdout("true").exit(0)
+
+@check50.check(exists)
+@check50.hidden("eliminate did not eliminate correct candidates")
+def eliminate1():
+    """eliminate eliminates candidate in last place"""
+    check50.run("python3 runoff_test.py 2 19").stdout("false false false true ").exit(0)
+
+@check50.check(exists)
+@check50.hidden("eliminate did not eliminate correct candidates")
+def eliminate2():
+    """eliminate eliminates multiple candidates in tie for last"""
+    check50.run("python3 runoff_test.py 2 20").stdout("true false true false ").exit(0)
+
+@check50.check(exists)
+@check50.hidden("eliminate did not eliminate correct candidates")
+def eliminate3():
+    """eliminate eliminates candidates after some already eliminated"""
+    check50.run("python3 runoff_test.py 2 21").stdout("true false true false ").exit(0)    
+    
+    
+    
+    
