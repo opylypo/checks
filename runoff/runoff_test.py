@@ -90,7 +90,7 @@ def main():
         vote(1, 0, "Bob")
         vote(1, 1, "Alice")
         vote(1, 2, "Charlie")
-        print(len(preferences) == 3 and preferences[0] = Preference(1, 0, 2) and preferences[1] == Preference(1, 1, 0) and preferences[2] = Preference(1, 2, 2))
+        print(len(preferences) == 3 and preferences[0] == Preference(1, 0, 2) and preferences[1] == Preference(1, 1, 0) and preferences[2] == Preference(1, 2, 2))
         
     elif test == 5:
         tabulate()
