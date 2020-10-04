@@ -14,7 +14,7 @@ def main():
     test = int(sys.argv[2])       
                    
 
-    if candidate in candidates:
+    if any(x.name == candidate for x in candidates):
         # vote returns True when candidate exists
         assert vote(0, 0, candidate)
 
