@@ -132,7 +132,7 @@ def is_tie4():
 @check50.hidden("eliminate did not eliminate correct candidates")
 def eliminate1():
     """eliminate eliminates candidate in last place"""
-    check50.run("python3 runoff_test.py 2 19").stdout("False False False Frue ").exit(0)
+    check50.run("python3 runoff_test.py 2 19").stdout("False False False True ").exit(0)
 
 @check50.check(exists)
 @check50.hidden("eliminate did not eliminate correct candidates")
