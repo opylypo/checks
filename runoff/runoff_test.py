@@ -148,7 +148,7 @@ def main():
         candidates[3].votes = 7
         print(is_tie(7))
         
-   elif test == 16:
+    elif test == 16:
         candidates[0].votes = 5
         candidates[1].votes = 6
         candidates[2].votes = 8
