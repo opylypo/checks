@@ -1,6 +1,6 @@
 import sys
 
-from plurality import vote, tabulate, print_winner, find_min, is_tie, Candidate
+from plurality import vote, tabulate, print_winner, find_min, is_tie, eliminate, Candidate
 from dataclasses import dataclass
 
 @dataclass
