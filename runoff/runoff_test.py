@@ -114,10 +114,86 @@ def main():
         print_winner()
         
     elif test == 9:
+        print(print_winner())
         
+    elif test == 10:
+        candidates[0].votes = 11
+        candidates[1].votes = 12;
+        print(print_winner())
         
+    elif test == 11:
+        candidates[0].votes = 9
+        candidates[1].votes = 14
+        print(print_winner())
         
+    elif test == 12:
+        print(find_min())
+        
+    elif test == 13:
+        candidates[0].votes = 7
+        candidates[1].votes = 7
+        candidates[2].votes = 7
+        candidates[3].votes = 7
+        print(find_min())
+        
+    elif test == 14:    
+        candidates[3].eliminated = True
+        candidates[2].votes = 5
+        print(find_min())
+        
+    elif test == 15:
+        candidates[0].votes = 7
+        candidates[1].votes = 7
+        candidates[2].votes = 7
+        candidates[3].votes = 7
+        print(is_tie(7))
+        
+   elif test == 16:
+        candidates[0].votes = 5
+        candidates[1].votes = 6
+        candidates[2].votes = 8
+        candidates[3].votes = 9
+        print(is_tie(5))
+        
+    elif test == 17:
+        candidates[0].votes = 6
+        candidates[1].votes = 6
+        candidates[2].votes = 8
+        candidates[3].votes = 8
+        print(is_tie(6))
+        
+    elif test == 18:
+        candidates[0].votes = 7
+        candidates[1].votes = 7
+        candidates[2].votes = 0
+        candidates[3].votes = 0
+        candidates[2].eliminated = True
+        candidates[3].eliminated = True
+        print(is_tie(7))
+        
+    elif test == 19:
+        eliminate(1)
+        for candidate in candidates
+            print(candidate.eliminated)
             
-    
+    elif test == 20:
+        candidates[0].votes = 6
+        candidates[1].votes = 8
+        candidates[2].votes = 6
+        candidates[3].votes = 8
+        eliminate(6)
+        for candidate in candidates
+            print(candidate.eliminated)
+            
+    elif test == 21:
+        candidates[0].votes = 0
+        candidates[0].eliminated = True
+        candidates[1].votes = 8
+        candidates[2].votes = 6
+        candidates[3].votes = 7
+        eliminate(6)
+        for candidate in candidates
+            print(candidate.eliminated)
+
 if __name__ == "__main__":
     main()
