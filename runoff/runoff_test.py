@@ -75,23 +75,23 @@ def main():
         candidates.append(Candidate('David', 1, False))
             
     if test == 0:
-        print(vote(0, 0, "Bob"))
+        print(vote(candidates, candidate_count, 0, 0, "Bob"))
         
     elif test == 1:
-        print(vote(1, 2, "David"))
+        print(vote(candidates, candidate_count, 1, 2, "David"))
             
     elif test == 2:
-        vote(0, 0, "Charlie")
+        vote(candidates, candidate_count, 0, 0, "Charlie")
         print(len(preferences) == 1 and preferences[0] == Preference(0, 0, 2))
         
     elif test == 3:
-        vote(1, 2, "Alice")
+        vote(candidates, candidate_count, 1, 2, "Alice")
         print(len(preferences) == 1 and preferences[0] == Preference(1, 2, 0))
         
     elif test == 4:
-        vote(1, 0, "Bob")
-        vote(1, 1, "Alice")
-        vote(1, 2, "Charlie")
+        vote(candidates, candidate_count, 1, 0, "Bob")
+        vote(candidates, candidate_count, 1, 1, "Alice")
+        vote(candidates, candidate_count, 1, 2, "Charlie")
         print(len(preferences) == 3 and preferences[0] == Preference(1, 0, 2) and preferences[1] == Preference(1, 1, 0) and preferences[2] == Preference(1, 2, 2))
         
     elif test == 5:
