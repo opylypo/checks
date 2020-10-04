@@ -18,8 +18,8 @@ def main():
     global preferences
 
     # Determine which test to run
-    setup = int(argv[1])
-    test = int(argv[2])   
+    setup = int(sys.argv[1])
+    test = int(sys.argv[2])   
                    
     if setup == 0:
         voter_count = 5
