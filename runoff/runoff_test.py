@@ -10,12 +10,12 @@ class Preference():
         self.rank = rank
         self.candidate = candidate
 
-def main():
-    candidates = []
-    preferences = []
-        
+def main():    
     global candidates
     global preferences
+    
+    candidates = []
+    preferences = []
 
     # Determine which test to run
     setup = int(sys.argv[1])
