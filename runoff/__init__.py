@@ -9,19 +9,19 @@ def exists():
 
 @check50.check(exists)
 def vote_check1():
-    """vote returns True and updates votes correctly when given name of first candidate"""
+    """vote returns True and updates preferences correctly when given name of first candidate"""
     check50.run("python3 runoff_test.py Alice").exit(0)
 
 
 @check50.check(exists)
 def vote_check2():
-    """vote returns True and updates votes correctly when given name of middle candidate"""
+    """vote returns True and updates preferences correctly when given name of middle candidate"""
     check50.run("python3 runoff_test.py Bob").exit(0)
 
 
 @check50.check(exists)
 def vote_check3():
-    """vote returns True and updates votes correctly when given name of last candidate"""
+    """vote returns True and updates preferences correctly when given name of last candidate"""
     check50.run("python3 runoff_test.py Charles").exit(0)
 
 
