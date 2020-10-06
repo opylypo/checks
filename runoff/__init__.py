@@ -5,9 +5,9 @@ import re
 def exists():
     """runoff.py exists"""
     check50.exists("runoff.py")
-    check50.include("runoff_test.py")
+    check50.include("runoff_test_functions.py")
     runoff = re.sub("main", "distro_main", open("runoff.py").read())
-    testing = open("runoff_test_data.py").read()
+    testing = open("runoff_test_functions.py").read()
     with open("runoff_test.py", "w") as f:
         f.write(runoff)
         f.write("\n")
