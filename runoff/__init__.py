@@ -1,10 +1,17 @@
 import check50
+import re
 
 @check50.check()
 def exists():
     """runoff.py exists"""
     check50.exists("runoff.py")
     check50.include("runoff_test.py")
+    runoff = re.sub("main", "distro_main", open("runoff.py").read())
+    testing = open("runoff_test_data.py").read()
+    with open("runoff_test.py", "w") as f:
+        f.write(runoff)
+        f.write("\n")
+        f.write(testing)
 
 
 @check50.check(exists)
