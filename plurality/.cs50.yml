@@ -3,7 +3,7 @@ submit50:
     - !exclude "*"
     - !include "*.py"
     - !require plurality.py
-    - !require testing.py
+    - !require plurality_test_functions.py
 
 check50:
   files: *submit50_files
