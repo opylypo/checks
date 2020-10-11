@@ -21,8 +21,8 @@ def main():
     preferences = []
 
     # Determine which test to run
-    setup = int(sys.argv[1])
-    test = int(sys.argv[2])
+    setup = int(argv[1])
+    test = int(argv[2])
 
     if setup == 0:
         voter_count = 5
@@ -38,26 +38,17 @@ def main():
         candidates.append(Candidate('Bob', 0, False))
         candidates.append(Candidate('Charlie', 0, False))
         candidates.append(Candidate('David', 0, False))
-        preferences.append(Preference(0, 0, 0))
-        preferences.append(Preference(1, 0, 0))
-        preferences.append(Preference(0, 1, 1))
-        preferences.append(Preference(1, 1, 1))
-        preferences.append(Preference(0, 2, 2))
-        preferences.append(Preference(1, 2, 2))
-        preferences.append(Preference(0, 3, 3))
-        preferences.append(Preference(1, 3, 3))
-        preferences.append(Preference(2, 0, 1))
-        preferences.append(Preference(3, 0, 1))
-        preferences.append(Preference(4, 0, 1))
-        preferences.append(Preference(2, 1, 3))
-        preferences.append(Preference(3, 1, 3))
-        preferences.append(Preference(4, 1, 3))
-        preferences.append(Preference(2, 2, 0))
-        preferences.append(Preference(3, 2, 0))
-        preferences.append(Preference(4, 2, 0))
-        preferences.append(Preference(2, 2, 2))
-        preferences.append(Preference(3, 2, 2))
-        preferences.append(Preference(4, 2, 2))
+        
+        preferences.append([0, 1, 2, 3])
+        preferences.append([0, 1, 2, 3])
+        preferences.append([1, 3, 0, 2]) 
+        preferences.append([1, 3, 0, 2]) 
+        preferences.append([1, 3, 0, 2]) 
+        preferences.append([2, 1, 3, 0])
+        preferences.append([0, 2, 1, 3])
+
+        
+        
         preferences.append(Preference(5, 0, 2))
         preferences.append(Preference(5, 1, 1))
         preferences.append(Preference(5, 2, 3))
