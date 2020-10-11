@@ -1,39 +1,96 @@
 import check50
+import re
 
 @check50.check()
 def exists():
     """plurality.py exists"""
     check50.exists("plurality.py")
-    
+    check50.include("plurality_test_functions.py")
+    plurality = re.sub("main", "distro_main", open("plurality.py").read())
+    testing = open("plurality_test_functions.py").read()
+    with open("testing.py", "w") as f:
+        f.write(plurality)
+        f.write("\n")
+        f.write(testing)
+
+
 @check50.check(exists)
-def prepare():
-    """test file created"""
-    plurality = open("plurality.py")
-    plurality_test = open("plurality_test.py", "w")
-
-    plurality_test.write(plurality.read())
-    plurality_test.write("\n\ncandidates['Alice'] = 0\ncandidates['Bob'] = 0\ncandidates['Charlie'] = 0")
-
-    plurality.close()
-    plurality_test.close()
-    
-
-@check50.check(compiles)
 @check50.hidden("vote function did not return True")
-def vote_finds_name():
-    """vote returns true when given name of candidate"""
+def vote_finds_name_first():
+    """vote returns true when given name of first candidate"""
     check50.run("python3 testing.py 0").stdout("True").exit(0)
-  
 
-@check50.check(compiles)
+@check50.check(exists)
+@check50.hidden("vote function did not return True")
+def vote_finds_name_second():
+    """vote returns true when given name of second candidate"""
+    check50.run("python3 testing.py 1").stdout("True").exit(0)
+
+@check50.check(exists)
+@check50.hidden("vote function did not return True")
+def vote_finds_name_third():
+    """vote returns true when given name of last candidate"""
+    check50.run("python3 testing.py 2").stdout("True").exit(0)
+
+
+@check50.check(exists)
 @check50.hidden("vote function did not return False")
 def vote_returns_false():
     """vote returns false when given name of invalid candidate"""
-    check50.run("python3 testing.py 1").stdout("False").exit(0)
-  
+    check50.run("python3 testing.py 3").stdout("False").exit(0)
+
 
 @check50.check(exists)
+@check50.hidden("vote function did not correctly update vote totals")
+def first_vote_totals_correct():
+    """vote produces correct counts when all votes are zero"""
+    check50.run("python3 testing.py 4").stdout("1 0 0").exit(0)
+
+@check50.check(exists)
+@check50.hidden("vote function did not correctly update vote totals")
+def subsequent_vote_totals_correct():
+    """vote produces correct counts after some have already voted"""
+    check50.run("python3 testing.py 5").stdout("2 8 0").exit(0)
+
+
+@check50.check(exists)
+@check50.hidden("vote function modified vote totals incorrectly")
+def invalid_vote_votes_unchanged():
+    """vote leaves vote counts unchanged when voting for invalid candidate"""
+    check50.run("python3 testing.py 6").stdout("2 8 0").exit(0)
+
+
+@check50.check(exists)
+@check50.hidden("print_winner function did not print winner of election")
 def print_winner0():
     """print_winner identifies Alice as winner of election"""
-    check50.run("python3 plurality.py Alice Bob").stdin("2").stdin("Alice").stdin("Alice").stdout("Alice\n").exit(0)
+    check50.run("python3 testing.py 7").stdout("Alice\n").exit(0)
 
+
+@check50.check(exists)
+@check50.hidden("print_winner function did not print winner of election")
+def print_winner1():
+    """print_winner identifies Bob as winner of election"""
+    check50.run("python3 testing.py 8").stdout("Bob\n").exit(0)
+
+@check50.check(exists)
+@check50.hidden("print_winner function did not print winner of election")
+def print_winner2():
+    """print_winner identifies Charlie as winner of election"""
+    check50.run("python3 testing.py 9").stdout("Charlie\n").exit(0)
+
+@check50.check(exists)
+@check50.hidden("print_winner function did not print both winners of election")
+def print_winner3():
+    """print_winner prints multiple winners in case of tie"""
+    result = check50.run("python3 testing.py 10").stdout()
+    if set(result.split("\n")) - {""} != {"Alice", "Bob"}:
+        raise check50.Mismatch("Alice\nBob\nCharlie\n", result)
+
+@check50.check(exists)
+@check50.hidden("print_winner function did not print all three winners of election")
+def print_winner4():
+    """print_winner prints all names when all candidates are tied"""
+    result = check50.run("python3 testing.py 11").stdout()
+    if set(result.split("\n")) - {""} != {"Alice", "Bob", "Charlie"}:
+        raise check50.Mismatch("Alice\nBob\nCharlie\n", result)
