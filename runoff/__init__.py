@@ -32,20 +32,20 @@ def vote_returns_false():
 @check50.hidden("vote function did not correctly set preferences")
 def vote_sets_preference1():
     """vote correctly sets first preference for first voter"""
-    check50.run("python3 runoff_test.py 0 2").stdout("True").exit(0)
+    check50.run("python3 runoff_test.py 0 2").stdout("2").exit(0)
 
 
 @check50.check(exists)
 def vote_sets_preference2():
     """vote correctly sets third preference for second voter"""
-    check50.run("python3 runoff_test.py 0 3").stdout("True").exit(0)
+    check50.run("python3 runoff_test.py 0 3").stdout("0").exit(0)
 
 
 @check50.check(exists)
 @check50.hidden("vote function did not correctly set preferences")
 def vote_sets_all_preferences():
     """vote correctly sets all preferences for voter"""
-    check50.run("python3 runoff_test.py 0 4").stdout("True").exit(0)
+    check50.run("python3 runoff_test.py 0 4").stdout("1 0 2").exit(0)
     
 
 @check50.check(exists)
