@@ -66,7 +66,7 @@ def tabulate2():
 @check50.hidden("tabulate function did not produce correct vote totals")
 def tabulate3():
     """tabulate counts votes when multiple candidates are eliminated"""
-    check50.run("python3 runoff_test.py 1 7").stdin("5").stdout("3\n4\n0\n0\n").exit(0)
+    check50.run("python3 runoff_test.py 1 7").stdout("3\n4\n0\n0\n").exit(0)
     
     
 @check50.check(exists)
