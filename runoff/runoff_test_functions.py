@@ -1,15 +1,3 @@
-# import sys
-
-# from runoff import vote, tabulate, print_winner, find_min, is_tie, eliminate, Candidate
-# from dataclasses import dataclass
-
-# @dataclass
-# class Preference():
-#     def __init__(self, voter, rank, candidate):
-#         self.voter = voter
-#         self.rank = rank
-#         self.candidate = candidate
-
 def main():
 
     global candidates
@@ -39,24 +27,13 @@ def main():
         candidates.append(Candidate('Charlie', 0, False))
         candidates.append(Candidate('David', 0, False))
         
-        preferences.append([0, 1, 2, 3])
-        preferences.append([0, 1, 2, 3])
-        preferences.append([1, 3, 0, 2]) 
-        preferences.append([1, 3, 0, 2]) 
-        preferences.append([1, 3, 0, 2]) 
-        preferences.append([2, 1, 3, 0])
-        preferences.append([0, 2, 1, 3])
-
-        
-        
-        preferences.append(Preference(5, 0, 2))
-        preferences.append(Preference(5, 1, 1))
-        preferences.append(Preference(5, 2, 3))
-        preferences.append(Preference(5, 3, 0))
-        preferences.append(Preference(6, 0, 0))
-        preferences.append(Preference(6, 1, 2))
-        preferences.append(Preference(6, 2, 1))
-        preferences.append(Preference(6, 3, 3))
+        preferences[0] = [0, 1, 2, 3]
+        preferences[1] = [0, 1, 2, 3]
+        preferences[2] = [1, 3, 0, 2]
+        preferences[3] = [1, 3, 0, 2]
+        preferences[4] = [1, 3, 0, 2]
+        preferences[5] = [2, 1, 3, 0]
+        preferences[6] = [0, 2, 1, 3]
 
     elif setup == 2:
         voter_count = 28
@@ -74,7 +51,7 @@ def main():
 
     elif test == 2:
         vote(0, 0, "Charlie")
-        print(len(preferences) == 1 and preferences[0] == Preference(0, 0, 2))
+        print(preferences[0][0])
 
     elif test == 3:
         vote(1, 2, "Alice")
@@ -84,7 +61,7 @@ def main():
         vote(1, 0, "Bob")
         vote(1, 1, "Alice")
         vote(1, 2, "Charlie")
-        print(len(preferences) == 3 and preferences[0] == Preference(1, 0, 2) and preferences[1] == Preference(1, 1, 0) and preferences[2] == Preference(1, 2, 2))
+        print(preferences[1][0], preferences[1][1], preferences[1][2])
 
     elif test == 5:
         tabulate()
