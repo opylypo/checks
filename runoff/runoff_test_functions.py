@@ -16,6 +16,8 @@ def main():
         candidates.append(Candidate('Alice', 0, False))
         candidates.append(Candidate('Bob', 0, False))
         candidates.append(Candidate('Charlie', 0, False))
+        for i in range(voter_count):
+            preferences[i] = [-1] * candidate_count
 
     elif setup == 1:
         voter_count = 7
@@ -40,6 +42,8 @@ def main():
         candidates.append(Candidate('Bob', 15, False))
         candidates.append(Candidate('Charlie', 4, False))
         candidates.append(Candidate('David', 1, False))
+        for i in range(voter_count):
+            preferences[i] = [-1] * candidate_count
 
     if test == 0:
         print(vote(0, 0, "Bob"))
