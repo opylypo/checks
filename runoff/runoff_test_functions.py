@@ -147,7 +147,7 @@ def main():
     elif test == 19:
         eliminate(1)
         for candidate in candidates:
-            print(candidate.eliminated)
+            print(candidate.eliminated, end=" ")
 
     elif test == 20:
         candidates[0].votes = 6
@@ -156,7 +156,7 @@ def main():
         candidates[3].votes = 8
         eliminate(6)
         for candidate in candidates:
-            print(candidate.eliminated)
+            print(candidate.eliminated, end=" ")
 
     elif test == 21:
         candidates[0].votes = 0
@@ -166,7 +166,7 @@ def main():
         candidates[3].votes = 7
         eliminate(6)
         for candidate in candidates:
-            print(candidate.eliminated)
+            print(candidate.eliminated, end=" ")
 
 if __name__ == "__main__":
     main()
