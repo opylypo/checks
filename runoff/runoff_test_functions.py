@@ -53,7 +53,7 @@ def main():
 
     elif test == 3:
         vote(1, 2, "Alice")
-        print(len(preferences) == 1 and preferences[0] == Preference(1, 2, 0))
+        print(preferences[1][2])
 
     elif test == 4:
         vote(1, 0, "Bob")
