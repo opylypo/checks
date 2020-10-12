@@ -52,21 +52,21 @@ def vote_sets_all_preferences():
 @check50.hidden("tabulate function did not produce correct vote totals")
 def tabulate1():
     """tabulate counts votes when all candidates remain in election"""
-    check50.run("python3 runoff_test.py 1 5").stdout("3 3 1 0 ").exit(0)
+    check50.run("python3 runoff_test.py 1 5").stdout("3\n3\n1\n0\n").exit(0)
         
 
 @check50.check(exists)
 @check50.hidden("tabulate function did not produce correct vote totals")
 def tabulate2():
     """tabulate counts votes when one candidate is eliminated"""
-    check50.run("python3 runoff_test.py 1 6").stdout("3 3 1 0 ").exit(0)
+    check50.run("python3 runoff_test.py 1 6").stdout("3\n3\n1\n0\n").exit(0)
         
 
 @check50.check(exists)
 @check50.hidden("tabulate function did not produce correct vote totals")
 def tabulate3():
     """tabulate counts votes when multiple candidates are eliminated"""
-    check50.run("python3 runoff_test.py 1 7").stdin("5").stdout("3 4 0 0 ").exit(0)
+    check50.run("python3 runoff_test.py 1 7").stdin("5").stdout("3\n4\n0\n0\n").exit(0)
     
     
 @check50.check(exists)
