@@ -5,8 +5,6 @@ def main():
     global candidate_count
     global voter_count
 
-    candidates = []
-    preferences = []
 
     # Determine which test to run
     setup = int(argv[1])
