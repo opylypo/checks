@@ -16,8 +16,10 @@ def main():
         candidates.append(Candidate('Alice', 0, False))
         candidates.append(Candidate('Bob', 0, False))
         candidates.append(Candidate('Charlie', 0, False))
-        for i in range(voter_count):
-            preferences.append([])
+#         for i in range(voter_count):
+#             preferences.append([])
+        global preferences
+        preferences = [[0] * candidate_count] * voter_count
 
     elif setup == 1:
         voter_count = 7
@@ -27,6 +29,8 @@ def main():
         candidates.append(Candidate('Charlie', 0, False))
         candidates.append(Candidate('David', 0, False))
         
+        global preferences
+        preferences = []
         preferences.append([0, 1, 2, 3])
         preferences.append([0, 1, 2, 3])
         preferences.append([1, 3, 0, 2])
