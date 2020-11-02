@@ -2,7 +2,6 @@ def main():
 
     global candidates
     global preferences
-    preferences = []
     global candidate_count
     global voter_count
 
@@ -29,6 +28,7 @@ def main():
         candidates.append(Candidate('Charlie', 0, False))
         candidates.append(Candidate('David', 0, False))
         
+        preferences = []
         preferences.append([0, 1, 2, 3])
         preferences.append([0, 1, 2, 3])
         preferences.append([1, 3, 0, 2])
