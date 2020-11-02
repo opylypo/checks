@@ -1,7 +1,8 @@
 def main():
 
     global candidates
-    global preferences = []
+    global preferences
+    preferences = []
     global candidate_count
     global voter_count
 
