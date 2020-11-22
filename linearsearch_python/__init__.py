@@ -8,18 +8,18 @@ def exists():
     
     
 @check50.check(exists)
-def finds2():
+def finds7():
     """linear search finds 7"""
     check50.run("python3 linear.py").stdin("7").stdout("Bingo! Found 7!\n").exit(0)
     
 
 @check50.check(exists)
-def finds14():
-    """binary search finds 26"""
+def finds26():
+    """linear search finds 26"""
     check50.run("python3 linear.py").stdin("26").stdout("Bingo! Found 26!\n").exit(0)   
     
     
 @check50.check(exists)
-def finds14():
-    """binary search does not find 70"""
+def finds70():
+    """linear search does not find 70"""
     check50.run("python3 linear.py").stdin("70").stdout("Sorry better luck next time!\n").exit(0)   
