@@ -3,7 +3,7 @@ import re
 
 @check50.check()
 def exists():
-    """binary.py exists"""
+    """bubble.py exists"""
     check50.exists("bubble.py")
     
     
