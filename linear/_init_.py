@@ -4,7 +4,7 @@ import re
 @check50.check()
 def exists():
     """linear.py exists"""
-    check50.exists("linear.py")
+    check50.exists("linear.c")
     
     
 @check50.check(exists)
