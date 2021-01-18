@@ -1,8 +1,8 @@
 submit50:
   files: &submit50_files
     - !exclude "*"
-    - !include "*.py"
-    - !require linear.py
+    - !include "*.c"
+    - !require linear.c
 
 check50:
   files: *submit50_files
